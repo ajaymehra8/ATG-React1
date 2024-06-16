@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { usePageState } from "../../Context/StateProvider";
 const Signup = () => {
-  const { setShowSignup, setShowLogin } = usePageState();
+  const { setShowSignup, setShowLogin,setShowShadow  } = usePageState();
+  const [pass,setPass]=useState(true);
 
   const hidePage = () => {
     // Function to hide the page (needs implementation)
     setShowSignup(false);
+    setShowShadow(false);
     document.body.style.overflowY = "scroll";
+    
   };
 
   const showLogin = () => {
     // Function to show the login form (needs implementation)
     setShowSignup(false);
+    setShowShadow(true);
     document.body.style.overflowY = "hidden";
-
     setShowLogin(true);
   };
 
@@ -61,16 +64,16 @@ const Signup = () => {
             <input type="email" placeholder="Email" />
             <div className="input-group">
               <input
-                type="password"
+                type={pass?"password":"text"}
                 placeholder="Password"
                 className="conPassword"
               />
-              <span className=" eyeBtn">
+              <span className=" eyeBtn" onClick={()=>{console.log("clic");setPass(!pass)}} style={{cursor:"pointer"}}>
                 <i className="bi bi-eye"></i>
               </span>
-            </div>{" "}
+            </div>  
             <input
-              type="text"
+              type="password"
               placeholder="Confirm Password"
               className="conPassword"
             />

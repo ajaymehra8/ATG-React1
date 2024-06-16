@@ -141,9 +141,11 @@
 }
 .jobBtn {
   color: green !important;
+  margin-bottom: 20px!important;
 }
 .webBtn {
   color: orange !important;
+  margin-bottom: 20px!important;
 }
 .posts .post-desc {
   font-size: clamp(14px, 2vw, 22px);

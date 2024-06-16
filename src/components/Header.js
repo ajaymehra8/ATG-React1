@@ -4,7 +4,7 @@ import { usePageState } from "../Context/StateProvider";
 // import './Components.css';  // Ensure the correct path here
 
 const Header = () => {
-  const { setShowSignup } = usePageState();
+  const { setShowSignup ,setShowShadow} = usePageState();
 
   return (
     <>
@@ -36,6 +36,10 @@ const Header = () => {
             className="head-link"
             onClick={() => {
               setShowSignup(true);
+              document.body.style.overflowY = "hidden";
+              setShowShadow(true);
+
+
             }}
           >
             Create a account.{" "}

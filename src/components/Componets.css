@@ -1,9 +1,0 @@
-.nav-input{
-    width: clamp(100px,30vw,350px);
-    outline: none;
-    border: none;
-    background: #E9E4E0;
-    border-radius: 100px;
-    padding: 10px 15px;
-    padding-left: 40px;
-}
